@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+.hamburger-line {
+  @apply w-[30px] h-[2px] block bg-dark my-2;
+}
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+}
+
+.navbar-fixed {
+  @apply fixed z-50 bg-[rgba(255,255,255,0.7)];
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0px -1px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Misal di file CSS kamu */
+
+.responsive-scale {
+  transform-origin: top left;
+  transform: scale(0.293); /* default scale untuk 300px */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+  .responsive-scale {
+    transform: scale(0.586); /* 600 / 1024 ≈ 0.586 */
+  }
+}
+
